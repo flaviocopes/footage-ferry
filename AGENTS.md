@@ -44,7 +44,7 @@ The Debug app is `build/Build/Products/Debug/Importer for Blackmagic Camera.app`
 
 ## Rules
 
-- The app was called Importer for Blackmagic Cam in 1.0, and its repo `importer-for-blackmagic-cam`. Since 1.0.1 everything people see says Blackmagic Camera, Blackmagic's name for its app. The bundle ID `com.flaviocopes.blackmagic-cam-importer`, the `BlackmagicCamImporter` target and folder, and the local folders keep the old name: the updater only installs a release with the same bundle ID, so never change it.
+- The app was called Importer for Blackmagic Cam in 1.0, and its repo `importer-for-blackmagic-cam`. Since 1.1 everything people see says Blackmagic Camera, Blackmagic's name for its app. The bundle ID `com.flaviocopes.blackmagic-cam-importer`, the `BlackmagicCamImporter` target and folder, and the local folders keep the old name: the updater only installs a release with the same bundle ID, so never change it.
 
 - Never delete anything from the iPhone without `Importer.deleteOriginal`'s check passing right before the delete. Don't add a delete path that skips it, and don't cache its result.
 - Never overwrite or delete a file in the import folder, except the app's own `.importing` files.
@@ -55,7 +55,7 @@ The Debug app is `build/Build/Products/Debug/Importer for Blackmagic Camera.app`
 - The MobileDevice functions have no headers. Their types in `MobileDevice` were checked against the framework on macOS 15 with an iPhone on iOS 26. If a symbol goes missing, `MobileDevice.shared` is nil and the app says the framework is missing.
 - Screenshots, the banner and anything published use made-up clips, never real recordings.
 - Keep the disclaimer accurate: the README's Disclaimer section and the About panel copyright line in `project.yml` say the app isn't affiliated with Blackmagic Design and comes without warranty.
-- Versions follow semver: a minor release (1.1.0) for new features, a point release (1.0.1) for bug fixes. Bump `CURRENT_PROJECT_VERSION` by one with every release.
+- Releases are minor by default (1.2.0): new features, changes people notice, renames, and bug fixes people care about. A point release is only for really unimportant stuff. The `open-source-release` skill has the rule. Bump `CURRENT_PROJECT_VERSION` by one with every release.
 - The updater trusts the GitHub release. Every release needs its `vX.Y.Z` tag, the zip from `scripts/build-release.sh` attached, and a `MARKETING_VERSION` that matches the tag, or the app refuses the update.
 - Releases are signed with Flavio Copes's Developer ID (team `DGFKNTAG99`) with the hardened runtime, and notarized inside `scripts/build-release.sh` when the certificate is in the keychain and a notarytool profile named `notary` is set up. Forks have no certificate, so the script signs ad hoc there and skips notarization.
 - The 30-second demo video comes from a separate Remotion project, `~/dev/importer-for-blackmagic-cam-showreel`, which rebuilds the window in code with made-up clips. It's not part of this repo, and the copy next to it is ignored.

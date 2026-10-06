@@ -12,7 +12,7 @@ Read the announcement and watch the 30-second demo on my blog: [I built a Mac ap
 
 ## Download
 
-Get `Importer-for-Blackmagic-Camera-1.0.1.zip` from the [latest release](https://github.com/flaviocopes/importer-for-blackmagic-camera/releases/latest), unzip it, and drag Importer for Blackmagic Camera to your Applications folder. It runs on macOS 15 Sequoia or later, on Apple silicon and Intel Macs.
+Get `Importer-for-Blackmagic-Camera-1.1.0.zip` from the [latest release](https://github.com/flaviocopes/importer-for-blackmagic-camera/releases/latest), unzip it, and drag Importer for Blackmagic Camera to your Applications folder. It runs on macOS 15 Sequoia or later, on Apple silicon and Intel Macs.
 
 ### Opening it the first time
 
