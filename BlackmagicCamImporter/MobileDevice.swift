@@ -120,9 +120,10 @@ final class Phone: @unchecked Sendable {
   }
 
   /// Opens the Documents folder of an app that shares its files, the folder Finder shows under
-  /// Files. Returns the iPhone's name too, which needs the same session. An iPhone that never
-  /// trusted this Mac gets asked to, and this throws `notPaired` until someone taps Trust on it.
-  func openDocuments(of bundleID: String) throws -> (name: String, files: AFCClient) {
+  /// Files. Returns the iPhone's name and model identifier too, like iPhone17,1, which need the
+  /// same session. An iPhone that never trusted this Mac gets asked to, and this throws
+  /// `notPaired` until someone taps Trust on it.
+  func openDocuments(of bundleID: String) throws -> (name: String, model: String, files: AFCClient) {
     try api.check(api.connect(device))
     defer { _ = api.disconnect(device) }
     if api.isPaired(device) != 1 && api.pair(device) != 0 {
@@ -133,6 +134,7 @@ final class Phone: @unchecked Sendable {
     defer { _ = api.stopSession(device) }
 
     let name = api.copyValue(device, nil, "DeviceName" as CFString)?.takeRetainedValue() as? String ?? "iPhone"
+    let model = api.copyValue(device, nil, "ProductType" as CFString)?.takeRetainedValue() as? String ?? ""
     var handle: MobileDevice.ConnectionRef?
     let options = ["CloseOnInvalidate": true, "InvalidateOnDetach": true] as CFDictionary
     try api.check(api.startService(device, "com.apple.mobile.house_arrest" as CFString, options, &handle))
@@ -144,7 +146,7 @@ final class Phone: @unchecked Sendable {
     if let error = reply["Error"] as? String {
       throw error == "ApplicationLookupFailed" ? PhoneError.appNotInstalled : PhoneError.vendFailed(error)
     }
-    return (name, AFCClient(connection: connection))
+    return (name, model, AFCClient(connection: connection))
   }
 }
 

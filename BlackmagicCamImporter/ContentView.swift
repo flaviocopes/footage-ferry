@@ -284,6 +284,28 @@ struct StatusBar: View {
   let model: AppModel
 
   var body: some View {
+    VStack(alignment: .leading, spacing: 8) {
+      if model.slowCable {
+        Label {
+          Text("Connected at USB 2 speed. A USB 3 cable, plugged straight into the Mac, can make imports much faster.")
+        } icon: {
+          Image(systemName: "cable.connector")
+            .foregroundStyle(.orange)
+        }
+        .font(.callout)
+        .foregroundStyle(.secondary)
+        .help("This iPhone supports USB 3, up to 10 Gb/s. Its connection runs at USB 2 speed, up to 480 Mb/s, because of the cable, the port or a hub in between.")
+      }
+      content
+    }
+    .padding(.horizontal, 16)
+    .padding(.vertical, 10)
+    .background(Color(nsColor: .windowBackgroundColor))
+    .overlay(alignment: .top) { Divider() }
+  }
+
+  @ViewBuilder
+  private var content: some View {
     HStack(spacing: 12) {
       if let batch = model.batch {
         VStack(alignment: .leading, spacing: 4) {
@@ -308,10 +330,6 @@ struct StatusBar: View {
         Spacer()
       }
     }
-    .padding(.horizontal, 16)
-    .padding(.vertical, 10)
-    .background(Color(nsColor: .windowBackgroundColor))
-    .overlay(alignment: .top) { Divider() }
   }
 
   private var summary: String {

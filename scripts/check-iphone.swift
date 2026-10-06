@@ -42,11 +42,15 @@ enum CheckIPhone {
 
     do {
       do {
-        let (_, first) = try phone.openDocuments(of: Importer.bundleID)
+        let (_, _, first) = try phone.openDocuments(of: Importer.bundleID)
         _ = try first.list("/Documents")
       }
-      let (name, files) = try phone.openDocuments(of: Importer.bundleID)
+      let (name, model, files) = try phone.openDocuments(of: Importer.bundleID)
       check(true, "opened Blackmagic Camera's Documents on \(name), closed it and opened it again")
+
+      let speed = USBLink.speed(ofDevice: phone.id)
+      let link = speed.map { $0 >= 4 ? "USB 3 (USBSpeed \($0))" : "USB 2 (USBSpeed \($0))" } ?? "not found"
+      check(speed != nil, "found the USB link of \(model): \(link), slow cable notice \(USBLink.needsFasterCable(model: model, speed: speed) ? "shown" : "hidden")")
 
       let names = try files.list("/Documents/Media").sorted()
       let infos = try names.map { try files.info("/Documents/Media/\($0)") }

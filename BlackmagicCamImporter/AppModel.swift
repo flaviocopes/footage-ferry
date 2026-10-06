@@ -70,6 +70,8 @@ final class AppModel {
   private(set) var batch: Batch?
   private(set) var isDeleting = false
   private(set) var thumbnails: [Video.ID: NSImage] = [:]
+  /// The iPhone supports USB 3 but the cable, port or hub runs at USB 2 speed.
+  private(set) var slowCable = false
   var selection: Set<Video.ID> = []
   var previewing: Video?
   var deleteOffer: DeleteOffer?
@@ -121,8 +123,9 @@ final class AppModel {
 
   // MARK: Connecting
 
-  func start(demo: Bool, demoVideo: URL? = nil) {
+  func start(demo: Bool, demoVideo: URL? = nil, demoSlowCable: Bool = false) {
     if demo {
+      slowCable = demoSlowCable
       Task { await connect(name: "iPhone 16 Pro", files: DemoFiles.sample(video: demoVideo)) }
       return
     }
@@ -181,6 +184,7 @@ final class AppModel {
       deleteOffer = nil
       thumbnails = [:]
       thumbnailRequests = []
+      slowCable = false
       phase = .waiting
     }
   }
@@ -190,8 +194,9 @@ final class AppModel {
       phase = .connecting
     }
     do {
-      let (name, files) = try await Task.detached { try phone.openDocuments(of: Importer.bundleID) }.value
+      let (name, model, files) = try await Task.detached { try phone.openDocuments(of: Importer.bundleID) }.value
       guard self.phone === phone else { return }
+      slowCable = USBLink.needsFasterCable(model: model, speed: USBLink.speed(ofDevice: phone.id))
       await connect(name: name, files: files)
     } catch PhoneError.notPaired {
       guard self.phone === phone else { return }

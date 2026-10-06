@@ -127,6 +127,12 @@ enum Tests {
       check(false, "importer: \(error.localizedDescription)")
     }
 
+    // USB speed
+    check(USBLink.needsFasterCable(model: "iPhone17,1", speed: 3), "an iPhone 16 Pro on a USB 2 link gets the slow cable notice")
+    check(!USBLink.needsFasterCable(model: "iPhone17,1", speed: 5), "an iPhone 16 Pro on a 10 Gb/s link doesn't")
+    check(!USBLink.needsFasterCable(model: "iPhone17,3", speed: 3), "an iPhone 16, which only has USB 2, doesn't")
+    check(!USBLink.needsFasterCable(model: "iPhone17,1", speed: nil), "an unknown link speed doesn't")
+
     // AppModel
     let suite = "blackmagic-importer-test-\(UUID().uuidString)"
     let defaults = UserDefaults(suiteName: suite)!

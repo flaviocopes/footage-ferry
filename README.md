@@ -48,6 +48,7 @@ I built and tested it with an iPhone 16 Pro on iOS 26.7.1 and Blackmagic Camera 
 - Copies keep the clip's recording date.
 - After an import, the app asks whether to delete the imported clips from the iPhone. **Keep on iPhone** is the default button. If you choose to delete, it checks every copy again right before deleting its clip, and keeps the clip on the iPhone if anything doesn't match.
 - The videos go to `~/Movies/Blackmagic Camera`, or to any folder you pick from the toolbar.
+- If your iPhone has a USB 3 port (the 15 Pro and later Pro models) but the cable, port or hub only runs at USB 2 speed, a note at the bottom of the window says a USB 3 cable can make imports much faster.
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="docs/screenshot-dark.png" />

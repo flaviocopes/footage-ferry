@@ -14,6 +14,7 @@
 		4A653B3B25E5FCCF60A88953 /* Importer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19FC4DC6531CED046AB86F24 /* Importer.swift */; };
 		69257C90D93E39DBD01D4711 /* AppIcon.icon in Resources */ = {isa = PBXBuildFile; fileRef = 789DFD5F7CDB7BF13F3720C8 /* AppIcon.icon */; };
 		6B9E11AB1B8F0ED32E86D514 /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCC944E1BD145E258EBC1CD /* AppModel.swift */; };
+		90EDC28C7A4233539C47D1EE /* USBLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = F92CF56B70A40AF78290CDB8 /* USBLink.swift */; };
 		A89EADD856461415DE0103CD /* AppUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67C078B8B06002ACE3235263 /* AppUpdater.swift */; };
 		BAC16D954B79645B28131ECD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A596ABC00F5A2F6D745AEDB /* ContentView.swift */; };
 		BF2EA9C55365F11DC7330012 /* AFC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DFA15CEE64DA8F1080CEBA /* AFC.swift */; };
@@ -31,6 +32,7 @@
 		7DCC944E1BD145E258EBC1CD /* AppModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppModel.swift; sourceTree = "<group>"; };
 		96E1409B71983A2D97AA6684 /* Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preview.swift; sourceTree = "<group>"; };
 		C7DFA15CEE64DA8F1080CEBA /* AFC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AFC.swift; sourceTree = "<group>"; };
+		F92CF56B70A40AF78290CDB8 /* USBLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USBLink.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -55,6 +57,7 @@
 				08A0D911E9F29ECFB25A7A36 /* ImporterApp.swift */,
 				6EFF80EC500F4EE8987A5616 /* MobileDevice.swift */,
 				96E1409B71983A2D97AA6684 /* Preview.swift */,
+				F92CF56B70A40AF78290CDB8 /* USBLink.swift */,
 			);
 			path = BlackmagicCamImporter;
 			sourceTree = "<group>";
@@ -146,6 +149,7 @@
 				465FB26965DFA3C05D869ACD /* ImporterApp.swift in Sources */,
 				269146C9F49ED153EC4B949C /* MobileDevice.swift in Sources */,
 				154A4CC498FCB73B3E2C2EA6 /* Preview.swift in Sources */,
+				90EDC28C7A4233539C47D1EE /* USBLink.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
