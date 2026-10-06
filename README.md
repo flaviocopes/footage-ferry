@@ -4,6 +4,10 @@ Importer for Blackmagic Cam is a free Mac app that copies the videos you record 
 
 Blackmagic Cam keeps its clips inside the app. To get them out you go through the Files app or the Finder, one file at a time, and nothing tells you whether a copy is complete before you delete the original. This app checks every copy against the iPhone's file, byte for byte, and only then offers to free up the space on the iPhone.
 
+Read the announcement and watch the 30-second demo on my blog: [I built a Mac app to import Blackmagic Cam videos from my iPhone](https://flaviocopes.com/importer-for-blackmagic-cam/).
+
+[![Watch the 30-second Importer for Blackmagic Cam demo](docs/showreel-poster.jpg)](https://flaviocopes.com/importer-for-blackmagic-cam/)
+
 > Importer for Blackmagic Cam is an independent project. It's not made by, affiliated with or endorsed by Blackmagic Design. See the [disclaimer](#disclaimer).
 
 ## Download
