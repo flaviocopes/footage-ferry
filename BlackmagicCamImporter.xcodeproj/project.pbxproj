@@ -1,0 +1,346 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		154A4CC498FCB73B3E2C2EA6 /* Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E1409B71983A2D97AA6684 /* Preview.swift */; };
+		269146C9F49ED153EC4B949C /* MobileDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EFF80EC500F4EE8987A5616 /* MobileDevice.swift */; };
+		3AD84F8D4DFAAAE5DC087CE5 /* DemoFiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FAFD895DC5D1E78C7C844C8 /* DemoFiles.swift */; };
+		465FB26965DFA3C05D869ACD /* ImporterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A0D911E9F29ECFB25A7A36 /* ImporterApp.swift */; };
+		4A653B3B25E5FCCF60A88953 /* Importer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19FC4DC6531CED046AB86F24 /* Importer.swift */; };
+		69257C90D93E39DBD01D4711 /* AppIcon.icon in Resources */ = {isa = PBXBuildFile; fileRef = 789DFD5F7CDB7BF13F3720C8 /* AppIcon.icon */; };
+		6B9E11AB1B8F0ED32E86D514 /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCC944E1BD145E258EBC1CD /* AppModel.swift */; };
+		A89EADD856461415DE0103CD /* AppUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67C078B8B06002ACE3235263 /* AppUpdater.swift */; };
+		BAC16D954B79645B28131ECD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A596ABC00F5A2F6D745AEDB /* ContentView.swift */; };
+		BF2EA9C55365F11DC7330012 /* AFC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DFA15CEE64DA8F1080CEBA /* AFC.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		08A0D911E9F29ECFB25A7A36 /* ImporterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImporterApp.swift; sourceTree = "<group>"; };
+		19FC4DC6531CED046AB86F24 /* Importer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Importer.swift; sourceTree = "<group>"; };
+		3A596ABC00F5A2F6D745AEDB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		5FAFD895DC5D1E78C7C844C8 /* DemoFiles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoFiles.swift; sourceTree = "<group>"; };
+		67C078B8B06002ACE3235263 /* AppUpdater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUpdater.swift; sourceTree = "<group>"; };
+		6EFF80EC500F4EE8987A5616 /* MobileDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileDevice.swift; sourceTree = "<group>"; };
+		789DFD5F7CDB7BF13F3720C8 /* AppIcon.icon */ = {isa = PBXFileReference; lastKnownFileType = wrapper.icon; path = AppIcon.icon; sourceTree = "<group>"; };
+		7A775A6CE7C1EC5149399F81 /* BlackmagicCamImporter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlackmagicCamImporter.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7DCC944E1BD145E258EBC1CD /* AppModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppModel.swift; sourceTree = "<group>"; };
+		96E1409B71983A2D97AA6684 /* Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preview.swift; sourceTree = "<group>"; };
+		C7DFA15CEE64DA8F1080CEBA /* AFC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AFC.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		02E99ABD6E2C28AFA563795B = {
+			isa = PBXGroup;
+			children = (
+				9CBBE1376A33AC2938283016 /* BlackmagicCamImporter */,
+				B486A68E8241C3C1FC465EAE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9CBBE1376A33AC2938283016 /* BlackmagicCamImporter */ = {
+			isa = PBXGroup;
+			children = (
+				C7DFA15CEE64DA8F1080CEBA /* AFC.swift */,
+				789DFD5F7CDB7BF13F3720C8 /* AppIcon.icon */,
+				7DCC944E1BD145E258EBC1CD /* AppModel.swift */,
+				67C078B8B06002ACE3235263 /* AppUpdater.swift */,
+				3A596ABC00F5A2F6D745AEDB /* ContentView.swift */,
+				5FAFD895DC5D1E78C7C844C8 /* DemoFiles.swift */,
+				19FC4DC6531CED046AB86F24 /* Importer.swift */,
+				08A0D911E9F29ECFB25A7A36 /* ImporterApp.swift */,
+				6EFF80EC500F4EE8987A5616 /* MobileDevice.swift */,
+				96E1409B71983A2D97AA6684 /* Preview.swift */,
+			);
+			path = BlackmagicCamImporter;
+			sourceTree = "<group>";
+		};
+		B486A68E8241C3C1FC465EAE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7A775A6CE7C1EC5149399F81 /* BlackmagicCamImporter.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CA2735C3C773680D05313329 /* BlackmagicCamImporter */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CBA488E0FC4A2282DC2E8987 /* Build configuration list for PBXNativeTarget "BlackmagicCamImporter" */;
+			buildPhases = (
+				F8B8764D7E9094600E6C6583 /* Sources */,
+				E219A9AFC4135FF6ABACA299 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BlackmagicCamImporter;
+			packageProductDependencies = (
+			);
+			productName = BlackmagicCamImporter;
+			productReference = 7A775A6CE7C1EC5149399F81 /* BlackmagicCamImporter.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8F773D72967D95AC14D5CC2D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					CA2735C3C773680D05313329 = {
+						ProvisioningStyle = Manual;
+					};
+				};
+			};
+			buildConfigurationList = BD4E3AE8F3910C5463F117BF /* Build configuration list for PBXProject "BlackmagicCamImporter" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 02E99ABD6E2C28AFA563795B;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = B486A68E8241C3C1FC465EAE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CA2735C3C773680D05313329 /* BlackmagicCamImporter */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E219A9AFC4135FF6ABACA299 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				69257C90D93E39DBD01D4711 /* AppIcon.icon in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F8B8764D7E9094600E6C6583 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF2EA9C55365F11DC7330012 /* AFC.swift in Sources */,
+				6B9E11AB1B8F0ED32E86D514 /* AppModel.swift in Sources */,
+				A89EADD856461415DE0103CD /* AppUpdater.swift in Sources */,
+				BAC16D954B79645B28131ECD /* ContentView.swift in Sources */,
+				3AD84F8D4DFAAAE5DC087CE5 /* DemoFiles.swift in Sources */,
+				4A653B3B25E5FCCF60A88953 /* Importer.swift in Sources */,
+				465FB26965DFA3C05D869ACD /* ImporterApp.swift in Sources */,
+				269146C9F49ED153EC4B949C /* MobileDevice.swift in Sources */,
+				154A4CC498FCB73B3E2C2EA6 /* Preview.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		25858E6BA568A6F4FB5B10BD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Manual;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MARKETING_VERSION = 1.0.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 6.0;
+			};
+			name = Release;
+		};
+		55FFB0DE550D9F37B02070B7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Importer for Blackmagic Cam";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.video";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "© 2026 Flavio Copes. MIT License. Not affiliated with Blackmagic Design.";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.flaviocopes.blackmagic-cam-importer";
+				PRODUCT_NAME = "Importer for Blackmagic Cam";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		60D38CAC4179CC3A72961836 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Manual;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MARKETING_VERSION = 1.0.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 6.0;
+			};
+			name = Debug;
+		};
+		8D9260665F6FD465A8EC4350 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Importer for Blackmagic Cam";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.video";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "© 2026 Flavio Copes. MIT License. Not affiliated with Blackmagic Design.";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.flaviocopes.blackmagic-cam-importer";
+				PRODUCT_NAME = "Importer for Blackmagic Cam";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BD4E3AE8F3910C5463F117BF /* Build configuration list for PBXProject "BlackmagicCamImporter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				60D38CAC4179CC3A72961836 /* Debug */,
+				25858E6BA568A6F4FB5B10BD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		CBA488E0FC4A2282DC2E8987 /* Build configuration list for PBXNativeTarget "BlackmagicCamImporter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8D9260665F6FD465A8EC4350 /* Debug */,
+				55FFB0DE550D9F37B02070B7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8F773D72967D95AC14D5CC2D /* Project object */;
+}
