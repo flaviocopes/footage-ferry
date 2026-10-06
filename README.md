@@ -2,7 +2,7 @@
 
 Importer for Blackmagic Camera is a free Mac app that copies the videos you record with [Blackmagic Camera](https://www.blackmagicdesign.com/products/blackmagiccamera) on your iPhone to your Mac, over a USB cable. Plug in the iPhone, see every clip with a thumbnail, play the ones you're not sure about, and import all of them or just a few.
 
-Blackmagic Camera clips are huge. Save them to your photo library or export them, and nothing tells you when the export has finished. The iPhone can lock itself halfway through, and you're left wondering whether your videos made it. This app shows every copy as it happens, checks each one against the iPhone's file byte for byte, and only then offers to free up the space on the iPhone.
+Blackmagic Camera can save clips straight to the iPhone's photo library, but that setting never worked for me, so my clips stayed in the app's own library. Getting them out is the hard part: the clips are huge, and when you save them to the photo library by hand or export them, nothing tells you when the export has finished. The iPhone can lock itself halfway through, and you're left wondering whether your videos made it. This app shows every copy as it happens, checks each one against the iPhone's file byte for byte, and only then offers to free up the space on the iPhone.
 
 Read the announcement and watch the 30-second demo on my blog: [I built a Mac app to import Blackmagic Camera videos from my iPhone](https://flaviocopes.com/importer-for-blackmagic-camera/).
 
