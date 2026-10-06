@@ -1,13 +1,13 @@
-# Importer for Blackmagic Cam
+# Importer for Blackmagic Camera
 
 A SwiftUI macOS app that copies the videos recorded with the Blackmagic Camera iPhone app to the Mac over USB, then offers to delete them from the iPhone. No dependencies. Not affiliated with Blackmagic Design.
 
-Blackmagic Cam keeps its clips in `Documents/Media` inside its app container, the folder the Finder shows under the iPhone's Files tab. The app reaches it the same way the Finder does: Apple's private `MobileDevice.framework` finds the iPhone and opens the `com.apple.mobile.house_arrest` service with `VendDocuments`, and the app speaks AFC, the iPhone's file protocol, over that connection itself.
+Blackmagic Camera keeps its clips in `Documents/Media` inside its app container, the folder the Finder shows under the iPhone's Files tab. The app reaches it the same way the Finder does: Apple's private `MobileDevice.framework` finds the iPhone and opens the `com.apple.mobile.house_arrest` service with `VendDocuments`, and the app speaks AFC, the iPhone's file protocol, over that connection itself.
 
 - `BlackmagicCamImporter/MobileDevice.swift`: `MobileDevice`, the framework's functions looked up with `dlopen`, `Phone` (one iPhone on USB: asks it to trust the Mac if it never did, opens an app's Documents), `ServiceConnection` (bytes and property lists over a service), `DeviceWatcher` (USB plug and unplug events, Wi-Fi ignored) and `PhoneError`.
 - `BlackmagicCamImporter/AFC.swift`: `AFCClient`, the AFC protocol: list, file info, read a whole file or a byte range (with seek), the iPhone's own SHA-1 of a file (operation `0x1D`), remove, plus write and make folder for `scripts/check-iphone.sh`. `PhoneFiles` is the protocol the importer uses, so `DemoFiles` can stand in for the iPhone.
 - `BlackmagicCamImporter/Importer.swift`: `Importer`, which lists videos, copies one into a folder and deletes the original. All blocking work runs on its own serial queue.
-- `BlackmagicCamImporter/Preview.swift`: `ClipLoader`, an `AVAssetResourceLoaderDelegate` that serves AVFoundation byte ranges of a clip straight from the iPhone through a made-up `blackmagic-clip://` URL. `Thumbnails` grabs one frame near the start (about 4 MB read even for a 1.4 GB clip, since Blackmagic Cam puts the `moov` index at the end) and caches it as a JPEG in `~/Library/Caches/com.flaviocopes.blackmagic-cam-importer/Thumbnails`. `PreviewView` plays a clip in `AVPlayerView`.
+- `BlackmagicCamImporter/Preview.swift`: `ClipLoader`, an `AVAssetResourceLoaderDelegate` that serves AVFoundation byte ranges of a clip straight from the iPhone through a made-up `blackmagic-clip://` URL. `Thumbnails` grabs one frame near the start (about 4 MB read even for a 1.4 GB clip, since Blackmagic Camera puts the `moov` index at the end) and caches it as a JPEG in `~/Library/Caches/com.flaviocopes.blackmagic-cam-importer/Thumbnails`. `PreviewView` plays a clip in `AVPlayerView`.
 - `BlackmagicCamImporter/DemoFiles.swift`: made-up clips for `--demo`, the tests and the screenshots. A clip's bytes are a block made from its name, repeated, so they can be read and hashed without being stored. With `--demo-video <path>`, every clip is a copy of that video instead, so previews play.
 - `BlackmagicCamImporter/AppModel.swift`: the connection phase (including waiting for Trust), the videos and their states, the sort order (saved in UserDefaults), the thumbnails (loaded one at a time), the clip being previewed, the import folder, the running import (`Batch`) and the delete offer. `stage(...)` at the bottom only compiles for `scripts/screenshot.sh`.
 - `BlackmagicCamImporter/ContentView.swift`: the sortable table with thumbnails, the toolbar, the progress bar, the delete alert and the folder picker. Double-click, Space or ⌘Y opens the preview.
@@ -31,18 +31,20 @@ xcodegen generate                  # after editing project.yml
 xcodebuild -project BlackmagicCamImporter.xcodeproj -scheme BlackmagicCamImporter -configuration Debug -derivedDataPath build build
 scripts/test.sh                    # importer and model against DemoFiles, no iPhone needed
 scripts/check-iphone.sh            # against the iPhone on USB, read-only: open, list, read the smallest clip, a range read, hashes, a thumbnail of the largest clip, a copy into a temp folder
-scripts/check-iphone.sh --write    # also writes, hashes and deletes a scratch file in a temporary folder in Blackmagic Cam's Documents
-scripts/build-release.sh           # universal Release build, Developer ID signed and notarized when the certificate is in the keychain, dist/Importer-for-Blackmagic-Cam-<version>.zip
+scripts/check-iphone.sh --write    # also writes, hashes and deletes a scratch file in a temporary folder in Blackmagic Camera's Documents
+scripts/build-release.sh           # universal Release build, Developer ID signed and notarized when the certificate is in the keychain, dist/Importer-for-Blackmagic-Camera-<version>.zip
 swift scripts/render-icon.swift    # after editing the icon
 scripts/screenshot.sh --vm         # docs/screenshot-light.png and -dark.png, captured in the test VM (leave out --vm to capture on this Mac)
 swift scripts/render-banner.swift  # docs/banner.png, from the icon and the dark screenshot
 ```
 
-The Debug app is `build/Build/Products/Debug/Importer for Blackmagic Cam.app`. Launch it with `--demo` to get 14 made-up clips instead of the iPhone. In the test VM, which has no iPhone: `testvm open "build/Build/Products/Debug/Importer for Blackmagic Cam.app" --demo`. Made-up clips have no thumbnails and don't play, so to test previews add `--demo-video <path>` with a video in the VM. Make one with `ffmpeg -f lavfi -i testsrc2=size=1920x1080:rate=30 -t 10 -c:v libx264 -pix_fmt yuv420p /tmp/importer-demo.mov`, never from someone's real recordings.
+The Debug app is `build/Build/Products/Debug/Importer for Blackmagic Camera.app`. Launch it with `--demo` to get 14 made-up clips instead of the iPhone. In the test VM, which has no iPhone: `testvm open "build/Build/Products/Debug/Importer for Blackmagic Camera.app" --demo`. Made-up clips have no thumbnails and don't play, so to test previews add `--demo-video <path>` with a video in the VM. Make one with `ffmpeg -f lavfi -i testsrc2=size=1920x1080:rate=30 -t 10 -c:v libx264 -pix_fmt yuv420p /tmp/importer-demo.mov`, never from someone's real recordings.
 
 `project.yml` is the source of the Xcode project, so edit it and regenerate instead of changing `project.pbxproj` by hand. The version lives in its `MARKETING_VERSION`.
 
 ## Rules
+
+- The app was called Importer for Blackmagic Cam in 1.0, and its repo `importer-for-blackmagic-cam`. Since 1.0.1 everything people see says Blackmagic Camera, Blackmagic's name for its app. The bundle ID `com.flaviocopes.blackmagic-cam-importer`, the `BlackmagicCamImporter` target and folder, and the local folders keep the old name: the updater only installs a release with the same bundle ID, so never change it.
 
 - Never delete anything from the iPhone without `Importer.deleteOriginal`'s check passing right before the delete. Don't add a delete path that skips it, and don't cache its result.
 - Never overwrite or delete a file in the import folder, except the app's own `.importing` files.

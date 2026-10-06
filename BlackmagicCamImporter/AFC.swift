@@ -8,7 +8,7 @@ struct FileInfo: Sendable {
   let modified: Date
 }
 
-/// Blackmagic Cam's files on the iPhone. `AFCClient` is the real thing, `DemoFiles` stands in for
+/// Blackmagic Camera's files on the iPhone. `AFCClient` is the real thing, `DemoFiles` stands in for
 /// it in the demo and the tests. Every call blocks until the iPhone answers.
 protocol PhoneFiles: AnyObject, Sendable {
   func list(_ path: String) throws -> [String]

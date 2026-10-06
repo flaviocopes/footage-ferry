@@ -39,7 +39,7 @@ final class Cancellation: Sendable {
   }
 }
 
-/// Copies Blackmagic Cam's videos from the iPhone into a folder on the Mac. A copy only counts
+/// Copies Blackmagic Camera's videos from the iPhone into a folder on the Mac. A copy only counts
 /// once the file read back from the Mac's disk has the same SHA-1 as the one the iPhone computes
 /// from its own storage, and a video is only deleted from the iPhone after that check passes
 /// again, right before the delete.

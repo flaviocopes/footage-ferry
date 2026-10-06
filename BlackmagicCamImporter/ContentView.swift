@@ -6,7 +6,7 @@ struct ContentView: View {
 
   var body: some View {
     content
-      .navigationTitle("Importer for Blackmagic Cam")
+      .navigationTitle("Importer for Blackmagic Camera")
       .navigationSubtitle(subtitle)
       .toolbar { toolbar }
       .safeAreaInset(edge: .bottom, spacing: 0) {
@@ -37,10 +37,10 @@ struct ContentView: View {
       ContentUnavailableView {
         Label("Connect Your iPhone", systemImage: "cable.connector")
       } description: {
-        Text("Plug it into this Mac with a USB cable and unlock it. The videos you recorded with Blackmagic Cam show up here.")
+        Text("Plug it into this Mac with a USB cable and unlock it. The videos you recorded with Blackmagic Camera show up here.")
       }
     case .connecting:
-      ProgressView("Opening Blackmagic Cam…")
+      ProgressView("Opening Blackmagic Camera…")
         .frame(maxWidth: .infinity, maxHeight: .infinity)
     case .needsTrust:
       ContentUnavailableView {
@@ -50,7 +50,7 @@ struct ContentView: View {
       }
     case .failed(let message):
       ContentUnavailableView {
-        Label("Can't Open Blackmagic Cam", systemImage: "exclamationmark.triangle")
+        Label("Can't Open Blackmagic Camera", systemImage: "exclamationmark.triangle")
       } description: {
         Text(message)
       } actions: {
@@ -60,7 +60,7 @@ struct ContentView: View {
       ContentUnavailableView {
         Label("No Videos", systemImage: "film.stack")
       } description: {
-        Text("Blackmagic Cam on \(model.phoneName ?? "the iPhone") has no videos in its own storage. Clips it saved to Photos or to an external drive don't show up here.")
+        Text("Blackmagic Camera on \(model.phoneName ?? "the iPhone") has no videos in its own storage. Clips it saved to Photos or to an external drive don't show up here.")
       }
     case .ready:
       VideoTable(model: model)

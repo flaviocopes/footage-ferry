@@ -60,7 +60,7 @@ final class AppModel {
     case failed(String)
   }
 
-  static let defaultDestination = URL.moviesDirectory.appending(path: "Blackmagic Cam")
+  static let defaultDestination = URL.moviesDirectory.appending(path: "Blackmagic Camera")
 
   private(set) var phase: Phase = .waiting
   private(set) var phoneName: String?

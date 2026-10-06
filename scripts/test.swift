@@ -132,7 +132,7 @@ enum Tests {
     let defaults = UserDefaults(suiteName: suite)!
     let folder = root.appending(path: "model")
     let model = AppModel(defaults: defaults)
-    check(model.destination == AppModel.defaultDestination, "imports into ~/Movies/Blackmagic Cam by default")
+    check(model.destination == AppModel.defaultDestination, "imports into ~/Movies/Blackmagic Camera by default")
     model.setDestination(folder)
     check(AppModel(defaults: defaults).destination.path == folder.path, "remembers the import folder")
 

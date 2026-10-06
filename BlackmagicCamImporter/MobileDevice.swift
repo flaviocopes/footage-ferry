@@ -20,9 +20,9 @@ enum PhoneError: LocalizedError {
     case .mobileDevice(let code, let text):
       "The iPhone didn't answer (\(text), \(String(format: "0x%08x", UInt32(bitPattern: code))). Unlock it and try again."
     case .appNotInstalled:
-      "Blackmagic Cam isn't installed on this iPhone."
+      "Blackmagic Camera isn't installed on this iPhone."
     case .vendFailed(let error):
-      "The iPhone refused to share Blackmagic Cam's files (\(error))."
+      "The iPhone refused to share Blackmagic Camera's files (\(error))."
     case .disconnected:
       "The iPhone was disconnected."
     case .badReply:

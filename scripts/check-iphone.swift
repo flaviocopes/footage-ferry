@@ -1,8 +1,8 @@
 // Talks to the iPhone plugged in over USB and checks the parts the app relies on: finding the
-// phone, opening Blackmagic Cam's Documents, listing Media, reading a clip and the iPhone's own
+// phone, opening Blackmagic Camera's Documents, listing Media, reading a clip and the iPhone's own
 // SHA-1 of it. Run it with scripts/check-iphone.sh. It reads the smallest clip, or the one named
 // as an argument. With --write it also creates a scratch
-// folder in Blackmagic Cam's Documents, writes, hashes and deletes a small file there, then
+// folder in Blackmagic Camera's Documents, writes, hashes and deletes a small file there, then
 // removes the folder. It never touches the videos.
 import CryptoKit
 import Foundation
@@ -46,7 +46,7 @@ enum CheckIPhone {
         _ = try first.list("/Documents")
       }
       let (name, files) = try phone.openDocuments(of: Importer.bundleID)
-      check(true, "opened Blackmagic Cam's Documents on \(name), closed it and opened it again")
+      check(true, "opened Blackmagic Camera's Documents on \(name), closed it and opened it again")
 
       let names = try files.list("/Documents/Media").sorted()
       let infos = try names.map { try files.info("/Documents/Media/\($0)") }

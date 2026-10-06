@@ -1,7 +1,7 @@
 import CryptoKit
 import Foundation
 
-/// Made-up Blackmagic Cam files, for the demo (`--demo`) and the tests. A clip's bytes are one
+/// Made-up Blackmagic Camera files, for the demo (`--demo`) and the tests. A clip's bytes are one
 /// block, made from its name, repeated, so clips of any size can be read and hashed without being
 /// stored anywhere. With a `video`, every clip is a copy of that file instead, so previews play.
 final class DemoFiles: PhoneFiles, @unchecked Sendable {
@@ -24,7 +24,7 @@ final class DemoFiles: PhoneFiles, @unchecked Sendable {
     self.video = video
   }
 
-  /// Clips named and sized like real Blackmagic Cam recordings.
+  /// Clips named and sized like real Blackmagic Camera recordings.
   static func sample(count: Int = 14, megabytes: ClosedRange<Int> = 30...600, bytesPerSecond: Double? = 120_000_000, video: URL? = nil) -> DemoFiles {
     var generator = SeededGenerator(seed: 7)
     var date = DateComponents(calendar: .current, year: 2026, month: 8, day: 2, hour: 17, minute: 11).date!

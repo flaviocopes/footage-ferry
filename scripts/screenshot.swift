@@ -19,7 +19,7 @@ enum Demo {
   }
 
   static func prepare() async {
-    model.setDestination(URL.temporaryDirectory.appending(path: "blackmagic-importer-screenshot/Blackmagic Cam"))
+    model.setDestination(URL.temporaryDirectory.appending(path: "blackmagic-importer-screenshot/Blackmagic Camera"))
     await model.connect(name: "iPhone 16 Pro", files: DemoFiles.sample(megabytes: 60...900, bytesPerSecond: nil))
     let videos = model.videos
     var states: [Video.ID: VideoState] = [:]
