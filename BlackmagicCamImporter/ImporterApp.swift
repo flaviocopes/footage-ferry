@@ -7,7 +7,7 @@ struct ImporterApp: App {
 
   init() {
     if !arguments.contains("--demo") {
-      AppUpdater.shared.start(repository: "flaviocopes/importer-for-blackmagic-camera")
+      AppUpdater.shared.start(repository: "flaviocopes/footage-ferry")
     }
   }
 
@@ -19,7 +19,7 @@ struct ImporterApp: App {
   }
 
   var body: some Scene {
-    Window("Importer for Blackmagic Camera", id: "main") {
+    Window("Footage Ferry", id: "main") {
       ContentView(model: model)
         .frame(minWidth: 820, minHeight: 440)
         .task { model.start(demo: arguments.contains("--demo"), demoVideo: demoVideo, demoSlowCable: arguments.contains("--demo-slow-cable")) }

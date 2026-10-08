@@ -8,7 +8,7 @@
 import AppKit
 import SwiftUI
 
-let title = "Importer for\nBlackmagic Camera"
+let title = "Footage Ferry"
 let tagline = "Copy the videos you shot with\nBlackmagic Camera from your iPhone\nto your Mac, over USB."
 let chips = ["Checked byte for byte", "Preview first", "Free"]
 let size = CGSize(width: 1280, height: 560)

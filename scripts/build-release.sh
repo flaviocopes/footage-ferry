@@ -1,6 +1,6 @@
 #!/bin/sh
 # Builds a universal (Apple silicon and Intel) Release app and writes
-# dist/Importer-for-Blackmagic-Cam-<version>.zip. Signs it with Flavio's Developer ID and
+# dist/Footage-Ferry-<version>.zip. Signs it with Flavio's Developer ID and
 # notarizes it when that certificate is in the keychain, and keeps Xcode's ad-hoc signature
 # everywhere else (forks, other Macs). The names and the version come from project.yml.
 # Usage: scripts/build-release.sh

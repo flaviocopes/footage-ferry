@@ -6,7 +6,7 @@ struct ContentView: View {
 
   var body: some View {
     content
-      .navigationTitle("Importer for Blackmagic Camera")
+      .navigationTitle("Footage Ferry")
       .navigationSubtitle(subtitle)
       .toolbar { toolbar }
       .safeAreaInset(edge: .bottom, spacing: 0) {

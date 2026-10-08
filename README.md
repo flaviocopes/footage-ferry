@@ -1,28 +1,28 @@
-<img src="docs/banner.png" alt="Importer for Blackmagic Camera, a Mac app that copies Blackmagic Camera videos from an iPhone" />
+<img src="docs/banner.png" alt="Footage Ferry, a Mac app that copies Blackmagic Camera videos from an iPhone" />
 
-Importer for Blackmagic Camera is a free Mac app that copies the videos you record with [Blackmagic Camera](https://www.blackmagicdesign.com/products/blackmagiccamera) on your iPhone to your Mac, over a USB cable. Plug in the iPhone, see every clip with a thumbnail, play the ones you're not sure about, and import all of them or just a few.
+Footage Ferry is a free Mac app that copies the videos you record with [Blackmagic Camera](https://www.blackmagicdesign.com/products/blackmagiccamera) on your iPhone to your Mac, over a USB cable. Plug in the iPhone, see every clip with a thumbnail, play the ones you're not sure about, and import all of them or just a few.
 
 Blackmagic Camera can save clips straight to the iPhone's photo library, but that setting never worked for me, so my clips stayed in the app's own library. Getting them out is the hard part: the clips are huge, and when you save them to the photo library by hand or export them, nothing tells you when the export has finished. The iPhone can lock itself halfway through, and you're left wondering whether your videos made it. This app shows every copy as it happens, checks each one against the iPhone's file byte for byte, and only then offers to free up the space on the iPhone.
 
-Read the announcement and watch the 30-second demo on my blog: [I built a Mac app to import Blackmagic Camera videos from my iPhone](https://flaviocopes.com/importer-for-blackmagic-camera/).
+Read the announcement and watch the 30-second demo on my blog: [I built a Mac app to import Blackmagic Camera videos from my iPhone](https://flaviocopes.com/footage-ferry/).
 
-[![Watch the 30-second Importer for Blackmagic Camera demo](docs/showreel-poster.jpg)](https://flaviocopes.com/importer-for-blackmagic-camera/)
+[![Watch the 30-second Footage Ferry demo](docs/showreel-poster.jpg)](https://flaviocopes.com/footage-ferry/)
 
-> Importer for Blackmagic Camera is an independent project. It's not made by, affiliated with or endorsed by Blackmagic Design. See the [disclaimer](#disclaimer).
+> Footage Ferry is an independent project. It's not made by, affiliated with or endorsed by Blackmagic Design. See the [disclaimer](#disclaimer).
 
 ## Download
 
-Get `Importer-for-Blackmagic-Camera-1.2.0.zip` from the [latest release](https://github.com/flaviocopes/importer-for-blackmagic-camera/releases/latest), unzip it, and drag Importer for Blackmagic Camera to your Applications folder. It runs on macOS 15 Sequoia or later, on Apple silicon and Intel Macs.
+Get `Footage-Ferry-1.3.0.zip` from the [latest release](https://github.com/flaviocopes/footage-ferry/releases/latest), unzip it, and drag Footage Ferry to your Applications folder. It runs on macOS 15 Sequoia or later, on Apple silicon and Intel Macs.
 
 ### Opening it the first time
 
-Importer for Blackmagic Camera is signed with my Apple Developer ID and notarized by Apple. The first time you open it, macOS asks if you're sure you want to open an app downloaded from the internet. Click **Open**.
+Footage Ferry is signed with my Apple Developer ID and notarized by Apple. The first time you open it, macOS asks if you're sure you want to open an app downloaded from the internet. Click **Open**.
 
-On a work laptop you might not be able to install apps in `/Applications`. You can keep Importer for Blackmagic Camera in the `Applications` folder inside your home folder instead.
+On a work laptop you might not be able to install apps in `/Applications`. You can keep Footage Ferry in the `Applications` folder inside your home folder instead.
 
 ### Updates
 
-Once a day, Importer for Blackmagic Camera asks GitHub whether there's a newer version. When there is, it shows what's new, and **Install and Relaunch** puts it in place of the old one. **Importer for Blackmagic Camera → Check for Updates…** checks right away.
+Once a day, Footage Ferry asks GitHub whether there's a newer version. When there is, it shows what's new, and **Install and Relaunch** puts it in place of the old one. **Footage Ferry → Check for Updates…** checks right away.
 
 To turn off the daily check, run this in Terminal:
 
@@ -52,12 +52,12 @@ I built and tested it with an iPhone 16 Pro on iOS 26.7.1 and Blackmagic Camera 
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="docs/screenshot-dark.png" />
-  <img src="docs/screenshot-light.png" alt="The Importer for Blackmagic Camera window halfway through an import, with three clips imported and the fourth at 62%" />
+  <img src="docs/screenshot-light.png" alt="The Footage Ferry window halfway through an import, with three clips imported and the fourth at 62%" />
 </picture>
 
 ## Privacy
 
-Your videos only go from the iPhone to the folder you picked. Thumbnails are cached on your Mac in `~/Library/Caches/com.flaviocopes.blackmagic-cam-importer`. Once a day, the app asks GitHub whether there's a newer version of Importer for Blackmagic Camera, and it downloads one only when you click **Install and Relaunch**. There are no accounts and no analytics.
+Your videos only go from the iPhone to the folder you picked. Thumbnails are cached on your Mac in `~/Library/Caches/com.flaviocopes.blackmagic-cam-importer`. Once a day, the app asks GitHub whether there's a newer version of Footage Ferry, and it downloads one only when you click **Install and Relaunch**. There are no accounts and no analytics.
 
 ## Build it from source
 
@@ -69,13 +69,10 @@ Open `BlackmagicCamImporter.xcodeproj` and press `⌘R`. To build the release zi
 scripts/build-release.sh
 ```
 
-It builds a universal app in `build/release/Release/Importer for Blackmagic Camera.app` and zips it into `dist/`. With my Developer ID certificate in the keychain it signs and notarizes the app. Everywhere else it signs it ad hoc, so your copy is signed ad hoc. A copy you build yourself opens without a warning on your Mac.
+It builds a universal app in `build/release/Release/Footage Ferry.app` and zips it into `dist/`. With my Developer ID certificate in the keychain it signs and notarizes the app. Everywhere else it signs it ad hoc, so your copy is signed ad hoc. A copy you build yourself opens without a warning on your Mac.
 
-If you send it to another Mac, macOS says it "could not verify Importer for Blackmagic Camera is free of malware". Click **Done**, then go to **System Settings → Privacy & Security** and click **Open Anyway**, or remove the quarantine flag in Terminal:
+If you send it to another Mac, macOS says it "could not verify Footage Ferry is free of malware". Click **Done**, then go to **System Settings → Privacy & Security** and click **Open Anyway**.
 
-```sh
-xattr -dr com.apple.quarantine "/Applications/Importer for Blackmagic Camera.app"
-```
 
 ## Development
 
@@ -102,7 +99,7 @@ MobileDevice is a private framework, so a future macOS update could break the ap
 
 ## Disclaimer
 
-Importer for Blackmagic Camera is an independent, unofficial project. It's not made by, affiliated with, sponsored by or endorsed by Blackmagic Design Pty. Ltd. Blackmagic Design, Blackmagic Camera and related names are trademarks of Blackmagic Design. They're used here only to say which app this one works with.
+Footage Ferry is an independent, unofficial project. It's not made by, affiliated with, sponsored by or endorsed by Blackmagic Design Pty. Ltd. Blackmagic Design, Blackmagic Camera and related names are trademarks of Blackmagic Design. They're used here only to say which app this one works with.
 
 The app is provided as is, without any warranty, as the [MIT License](LICENSE) says. You use it at your own risk. I'm not responsible for lost or damaged videos, or for any damage to your iPhone, your Mac or anything else. The app checks every copy before it offers to delete anything, but keep a backup of footage you care about, and look at your copies before you delete the originals.
 

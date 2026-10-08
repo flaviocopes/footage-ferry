@@ -1,4 +1,4 @@
-# Importer for Blackmagic Camera
+# Footage Ferry
 
 A SwiftUI macOS app that copies the videos recorded with the Blackmagic Camera iPhone app to the Mac over USB, then offers to delete them from the iPhone. No dependencies. Not affiliated with Blackmagic Design.
 
@@ -33,19 +33,19 @@ xcodebuild -project BlackmagicCamImporter.xcodeproj -scheme BlackmagicCamImporte
 scripts/test.sh                    # importer and model against DemoFiles, no iPhone needed
 scripts/check-iphone.sh            # against the iPhone on USB, read-only: open, list, read the smallest clip, a range read, hashes, a thumbnail of the largest clip, a copy into a temp folder
 scripts/check-iphone.sh --write    # also writes, hashes and deletes a scratch file in a temporary folder in Blackmagic Camera's Documents
-scripts/build-release.sh           # universal Release build, Developer ID signed and notarized when the certificate is in the keychain, dist/Importer-for-Blackmagic-Camera-<version>.zip
+scripts/build-release.sh           # universal Release build, Developer ID signed and notarized when the certificate is in the keychain, dist/Footage-Ferry-<version>.zip
 swift scripts/render-icon.swift    # after editing the icon
 scripts/screenshot.sh --vm         # docs/screenshot-light.png and -dark.png, captured in the test VM (leave out --vm to capture on this Mac)
 swift scripts/render-banner.swift  # docs/banner.png, from the icon and the dark screenshot
 ```
 
-The Debug app is `build/Build/Products/Debug/Importer for Blackmagic Camera.app`. Launch it with `--demo` to get 14 made-up clips instead of the iPhone. In the test VM, which has no iPhone: `testvm open "build/Build/Products/Debug/Importer for Blackmagic Camera.app" --demo`. Made-up clips have no thumbnails and don't play, so to test previews add `--demo-video <path>` with a video in the VM. `--demo-slow-cable` shows the USB 2 cable notice. Make one with `ffmpeg -f lavfi -i testsrc2=size=1920x1080:rate=30 -t 10 -c:v libx264 -pix_fmt yuv420p /tmp/importer-demo.mov`, never from someone's real recordings.
+The Debug app is `build/Build/Products/Debug/Footage Ferry.app`. Launch it with `--demo` to get 14 made-up clips instead of the iPhone. In the test VM, which has no iPhone: `testvm open "build/Build/Products/Debug/Footage Ferry.app" --demo`. Made-up clips have no thumbnails and don't play, so to test previews add `--demo-video <path>` with a video in the VM. `--demo-slow-cable` shows the USB 2 cable notice. Make one with `ffmpeg -f lavfi -i testsrc2=size=1920x1080:rate=30 -t 10 -c:v libx264 -pix_fmt yuv420p /tmp/importer-demo.mov`, never from someone's real recordings.
 
 `project.yml` is the source of the Xcode project, so edit it and regenerate instead of changing `project.pbxproj` by hand. The version lives in its `MARKETING_VERSION`.
 
 ## Rules
 
-- The app was called Importer for Blackmagic Cam in 1.0, and its repo `importer-for-blackmagic-cam`. Since 1.1 everything people see says Blackmagic Camera, Blackmagic's name for its app. The bundle ID `com.flaviocopes.blackmagic-cam-importer`, the `BlackmagicCamImporter` target and folder, and the local folders keep the old name: the updater only installs a release with the same bundle ID, so never change it.
+- Footage Ferry keeps the original bundle ID `com.flaviocopes.blackmagic-cam-importer`, the `BlackmagicCamImporter` target and source folder. The updater requires the same bundle ID. Its local checkout and GitHub repository are `footage-ferry`.
 
 - Never delete anything from the iPhone without `Importer.deleteOriginal`'s check passing right before the delete. Don't add a delete path that skips it, and don't cache its result.
 - Never overwrite or delete a file in the import folder, except the app's own `.importing` files.
@@ -60,5 +60,9 @@ The Debug app is `build/Build/Products/Debug/Importer for Blackmagic Camera.app`
 - Releases are minor by default (1.2.0): new features, changes people notice, renames, and bug fixes people care about. A point release is only for really unimportant stuff. The `open-source-release` skill has the rule. Bump `CURRENT_PROJECT_VERSION` by one with every release.
 - The updater trusts the GitHub release. Every release needs its `vX.Y.Z` tag, the zip from `scripts/build-release.sh` attached, and a `MARKETING_VERSION` that matches the tag, or the app refuses the update.
 - Releases are signed with Flavio Copes's Developer ID (team `DGFKNTAG99`) with the hardened runtime, and notarized inside `scripts/build-release.sh` when the certificate is in the keychain and a notarytool profile named `notary` is set up. Forks have no certificate, so the script signs ad hoc there and skips notarization.
-- The 30-second demo video comes from a separate Remotion project, `~/dev/importer-for-blackmagic-cam-showreel`, which rebuilds the window in code with made-up clips. It's not part of this repo, and the copy next to it is ignored.
+- The 30-second demo video comes from a separate Remotion project, `~/dev/footage-ferry-showreel`, which rebuilds the window in code with made-up clips. It's not part of this repo, and the copy next to it is ignored.
 - Don't run `scripts/build-release.sh` just to test a change. It deletes `build/release` and overwrites the `dist/` zip of the current release, whose checksum is published. Build Debug instead.
+
+## Naming compatibility
+
+The public app name is Footage Ferry. Keep its existing bundle ID, saved data paths, URL schemes, CLI commands and internal Swift targets so installed copies and agent integrations remain compatible. Use the renamed checkout folder and GitHub repository in new links and build instructions.
